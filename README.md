@@ -1,5 +1,6 @@
 # VRMarineProject
 A VR representation of the marine area and life around St Abbs, Scotland.
+Requires Unity 2017.
 
 VR controls:
   Left dpad - move body in that direction,
