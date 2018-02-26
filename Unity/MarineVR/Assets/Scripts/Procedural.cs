@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Procedural : MonoBehaviour {
     [SerializeField]
-    private float size;
+    private float width = 10;
     [SerializeField]
-    public GameObject coral;
+    private float length = 10;
+    [SerializeField]
+    private GameObject coral;
+    [SerializeField]
+    private int objects = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -23,15 +27,30 @@ public class Procedural : MonoBehaviour {
 
     private void Generate()
     {
-        Vector3 pos = transform.localPosition + new Vector3(Random.Range(-size/2, size/2), Random.Range(-size/2, size/2), Random.Range(-size/2, size/2));
+        for (int i = 0; i < objects; i++)
+        {
+            Vector3 pos = transform.localPosition + new Vector3(Random.Range(-width / 2, width / 2), 0, Random.Range(-length / 2, length / 2));
+            Ray down = new Ray(pos, Vector3.down);
+            RaycastHit hit;
 
-        Instantiate(coral, pos, Quaternion.identity);
+            if (Physics.Raycast(down, out hit))
+            {
+                if (hit.collider.tag == "Ground")
+                {
+                    Debug.Log("Ground");
+                    pos.y = hit.point.y;
+                    Instantiate(coral, pos, Quaternion.identity);
+
+                }
+            }
+
+        }
     }
 
     void OnDrawGizmosSelected()
     {
         //draw range sphere
         Gizmos.color = new Color(0.5f, 0.0f, 0.5f, 0.2f);
-        Gizmos.DrawCube(transform.localPosition, new Vector3(size, size, size));
+        Gizmos.DrawCube(transform.localPosition, new Vector3(width, 2, length));
     }
 }
