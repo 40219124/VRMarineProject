@@ -10,12 +10,23 @@ public class PlayerBodyMovement : MonoBehaviour
     private SteamVR_TrackedObject trackedObj;
     // device 0 = left, device 1 = right
     private SteamVR_Controller.Device[] device = new SteamVR_Controller.Device[2];
+    private Transform camTrans;
+    private float bearing = 0.0f;
 
     // Use this for initialization
     void Start()
     {
+        Transform[] transs = GetComponentsInChildren<Transform>();
+        foreach (Transform t in transs)
+        {
+            if (t.name.Contains("eye"))
+            {
+                camTrans = t;
+                break;
+            }
+        }
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +38,10 @@ public class PlayerBodyMovement : MonoBehaviour
         }
         device[0] = SteamVR_Controller.Input((int)trackedObj.index);
         device[1] = SteamVR_Controller.Input((int)controller[1].GetComponent<SteamVR_TrackedObject>().index);
+        if (device[1].GetPress(EVRButtonId.k_EButton_SteamVR_Touchpad))
+        {
+            bearing = camTrans.eulerAngles.y;
+        }
         if (device[0].GetPress(EVRButtonId.k_EButton_SteamVR_Touchpad))
         {
             Vector2 touchpad = (device[0].GetAxis(EVRButtonId.k_EButton_Axis0));
@@ -35,11 +50,11 @@ public class PlayerBodyMovement : MonoBehaviour
             {
                 touchpad = touchpad.normalized;
             }
-            else if(sqLen > 0.0f)
+            else if (sqLen > 0.0f)
             {
                 touchpad = touchpad.normalized / 2.0f;
             }
-            transform.Translate(new Vector3(touchpad.x, 0.0f, touchpad.y) * Time.deltaTime);
+            transform.Translate(Quaternion.Euler(0.0f, bearing, 0.0f) * new Vector3(touchpad.x, 0.0f, touchpad.y) * Time.deltaTime);
         }
         if (device[0].GetPress(EVRButtonId.k_EButton_SteamVR_Trigger))
         {
