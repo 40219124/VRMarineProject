@@ -22,6 +22,7 @@ public class Procedural : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         //if P is pressed generate more *****FOR DEBUG******
 		if (Input.GetKey(KeyCode.P))
         {
