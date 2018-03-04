@@ -13,9 +13,6 @@ public class Procedural : MonoBehaviour {
     private int objects = 100;
     [SerializeField]
     private int max_height = 0;
-    //I SHOULD TRY AND MAKE THIS LESS HARD CODED
-    [SerializeField]
-    private float offset = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -52,7 +49,7 @@ public class Procedural : MonoBehaviour {
                 if (hit.collider.tag == "Ground")
                 {
                     //set y position to hit point
-                    pos.y = hit.point.y + offset;
+                    pos.y = hit.point.y;
                     Vector3 up = new Vector3(0.0f, 1.0f, 0.0f);
                     //find angle of rotation
                     float angle = Mathf.Acos(Vector3.Dot(up, hit.normal));
@@ -60,6 +57,7 @@ public class Procedural : MonoBehaviour {
                     angle = (angle * 180) / Mathf.PI;
                     //find axis of rotation
                     Vector3 axis = Vector3.Normalize(Vector3.Cross(up, hit.normal));
+                    pos += (coral.GetComponent<Coral>().offset * coral.transform.localScale.y) * hit.normal;
                     //multiply by angle
                     axis *= angle;
                     //create coral
