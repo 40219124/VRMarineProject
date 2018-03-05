@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1699962412813862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.96, y: -15.22, z: 4.09}
+  m_LocalPosition: {x: 5, y: -15.22, z: 134.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,12 +48,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699962412813862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0acb7ac01554332449437e3bc65d904a, type: 3}
+  m_Script: {fileID: 11500000, guid: c06e98935293ebd48afe91c200aabbbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 8.13
-  length: 18.3
-  coral: {fileID: 1537965663809134, guid: fd61855283e661f4fa73f0d4df2d3548, type: 2}
-  objects: 10
+  size: 10
+  coral: {fileID: 1537965663809134, guid: 74954964c27b04d4ca6c7a1cab8e785e, type: 2}
+  objects: 300
   max_height: 0
-  offset: 300
