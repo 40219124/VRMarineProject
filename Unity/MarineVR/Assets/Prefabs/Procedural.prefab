@@ -52,6 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 10
-  coral: {fileID: 1537965663809134, guid: 74954964c27b04d4ca6c7a1cab8e785e, type: 2}
+  coral:
+  - {fileID: 1537965663809134, guid: 74954964c27b04d4ca6c7a1cab8e785e, type: 2}
+  - {fileID: 1238621701560504, guid: f3cfc62f81a4247428c8f1e6a7423999, type: 2}
   objects: 300
   max_height: 0

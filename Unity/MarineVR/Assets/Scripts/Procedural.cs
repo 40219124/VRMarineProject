@@ -6,7 +6,7 @@ public class Procedural : MonoBehaviour
 {
     public float size = 10;
     [SerializeField]
-    private GameObject coral;
+    private List<GameObject> coral = new List<GameObject>();
     [SerializeField]
     private int objects = 100;
     [SerializeField]
@@ -71,17 +71,22 @@ public class Procedural : MonoBehaviour
                 //if hits ground
                 if (hit.collider.tag == "Ground")
                 {
-                    //find angle of rotation
-                    float angle = Mathf.Acos(Vector3.Dot(Vector3.up, hit.normal));
-                    //convert to degrees
-                    angle = (angle * 180) / Mathf.PI;
-                    //find axis of rotation
-                    Vector3 axis = Vector3.Normalize(Vector3.Cross(Vector3.up, hit.normal));
-                    hit.point += (coral.GetComponent<Coral>().offset * coral.transform.localScale.y) * hit.normal;
-                    //multiply by angle
-                    axis *= angle;
+                    int j = Random.Range(0, coral.Count);
+                    Vector3 axis = new Vector3();
+                    if (coral[j].GetComponent<Coral>().changeAngle)
+                    {
+                        //find angle of rotation
+                        float angle = Mathf.Acos(Vector3.Dot(Vector3.up, hit.normal));
+                        //convert to degrees
+                        angle = (angle * 180) / Mathf.PI;
+                        //find axis of rotation
+                        axis = Vector3.Normalize(Vector3.Cross(Vector3.up, hit.normal));
+                        hit.point += (coral[j].GetComponent<Coral>().offset * coral[j].transform.localScale.y) * hit.normal;
+                        //multiply by angle
+                        axis *= angle;
+                    }
                     //create coral
-                    GameObject c = Instantiate(coral, hit.point, Quaternion.Euler(axis));
+                    GameObject c = Instantiate(coral[j], hit.point, Quaternion.Euler(axis));
                     c.transform.parent = this.GetComponent<Transform>();
                     corals.Add(c);
                 }
