@@ -73,20 +73,22 @@ public class Procedural : MonoBehaviour
                 {
                     int j = Random.Range(0, coral.Count);
                     Vector3 axis = new Vector3();
+
                     if (coral[j].GetComponent<Coral>().changeAngle)
                     {
+                        hit.point += (coral[j].GetComponent<Coral>().offset * coral[j].transform.localScale.y) * hit.normal;
                         //find angle of rotation
                         float angle = Mathf.Acos(Vector3.Dot(Vector3.up, hit.normal));
                         //convert to degrees
                         angle = (angle * 180) / Mathf.PI;
                         //find axis of rotation
                         axis = Vector3.Normalize(Vector3.Cross(Vector3.up, hit.normal));
-                        hit.point += (coral[j].GetComponent<Coral>().offset * coral[j].transform.localScale.y) * hit.normal;
                         //multiply by angle
                         axis *= angle;
                     }
                     //create coral
                     GameObject c = Instantiate(coral[j], hit.point, Quaternion.Euler(axis));
+                    c.transform.Rotate(new Vector3(0.0f, Random.Range(-180, 180), 0.0f));
                     c.transform.parent = this.GetComponent<Transform>();
                     corals.Add(c);
                 }
