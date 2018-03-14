@@ -72,25 +72,48 @@ public class Procedural : MonoBehaviour
                 if (hit.collider.tag == "Ground")
                 {
                     int j = Random.Range(0, coral.Count);
-                    Vector3 axis = new Vector3();
+                    Coral theCoral = coral[j].GetComponent<Coral>();
+                    //find angle of rotation
+                    float angle = Mathf.Acos(Vector3.Dot(Vector3.up, hit.normal));
+                    //convert to degrees
+                    angle = (angle * 180) / Mathf.PI;
+                    int tries = 2;
+                    bool done = false;
 
-                    if (coral[j].GetComponent<Coral>().changeAngle)
+                    while (!done)
                     {
-                        hit.point += (coral[j].GetComponent<Coral>().offset * coral[j].transform.localScale.y) * hit.normal;
-                        //find angle of rotation
-                        float angle = Mathf.Acos(Vector3.Dot(Vector3.up, hit.normal));
-                        //convert to degrees
-                        angle = (angle * 180) / Mathf.PI;
-                        //find axis of rotation
-                        axis = Vector3.Normalize(Vector3.Cross(Vector3.up, hit.normal));
-                        //multiply by angle
-                        axis *= angle;
+                        tries -= 1;
+                        if (tries == 0)
+                        {
+                            done = true;
+                            break;
+                        }
+                        if (theCoral.mindepth < hit.point.y || theCoral.maxdepth > hit.point.y || theCoral.steepest < angle || theCoral.shallowest > angle)
+                        {
+                            j = Random.Range(0, coral.Count);
+                            theCoral = coral[j].GetComponent<Coral>();
+                        }
                     }
-                    //create coral
-                    GameObject c = Instantiate(coral[j], hit.point, Quaternion.Euler(axis));
-                    c.transform.Rotate(new Vector3(0.0f, Random.Range(-180, 180), 0.0f));
-                    c.transform.parent = this.GetComponent<Transform>();
-                    corals.Add(c);
+
+                    if (theCoral.mindepth > hit.point.y && theCoral.maxdepth < hit.point.y && theCoral.steepest > angle && theCoral.shallowest <= angle)
+                    {
+                        Vector3 axis = new Vector3();
+
+                        if (theCoral.changeAngle)
+                        {
+                            hit.point += (theCoral.offset * coral[j].transform.localScale.y) * hit.normal;
+
+                            //find axis of rotation
+                            axis = Vector3.Normalize(Vector3.Cross(Vector3.up, hit.normal));
+                            //multiply by angle
+                            axis *= angle;
+                        }
+                        //create coral
+                        GameObject c = Instantiate(coral[j], hit.point, Quaternion.Euler(axis));
+                        c.transform.Rotate(new Vector3(0.0f, Random.Range(-180, 180), 0.0f));
+                        c.transform.parent = this.GetComponent<Transform>();
+                        corals.Add(c);
+                    }
                 }
             }
 
