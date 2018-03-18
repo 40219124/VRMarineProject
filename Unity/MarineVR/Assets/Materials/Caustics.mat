@@ -35,7 +35,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: eff4939c8c9bf92438f6e028d087a914, type: 3}
+        m_Texture: {fileID: 2800000, guid: 20fbf597dab2839468722e3227e1288a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -56,7 +56,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _CausticsScale: 2
+    - _CausticsScale: 1
     - _CausticsShallowFadeDistance: 1
     - _CausticsStartLevel: 0
     - _Cutoff: 0.5
@@ -76,7 +76,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _CausticsDrift: {r: 0.05, g: 0, b: -0.1, a: 1}
+    - _CausticsDrift: {r: 0.1, g: 0, b: -0.05, a: 1}
     - _Color: {r: 0.454902, g: 0.70980394, b: 0.82745105, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
