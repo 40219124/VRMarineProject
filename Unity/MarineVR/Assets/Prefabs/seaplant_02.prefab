@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 33225570751469932}
   - component: {fileID: 23860284875382358}
   m_Layer: 0
-  m_Name: default
+  m_Name: Seaplant 2 mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ Transform:
   m_GameObject: {fileID: 1238621701560504}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -23.663918, y: -31.556885, z: 82.45943}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4382310068440626}
   m_Father: {fileID: 0}
@@ -111,7 +111,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1380568518294198}
-  m_Mesh: {fileID: 4300000, guid: 2f030336c1b3f90449c622cdf0004f0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 801e8c01c6fc278449bc70f6bfabbfec, type: 3}
 --- !u!114 &114092099260225520
 MonoBehaviour:
   m_ObjectHideFlags: 1

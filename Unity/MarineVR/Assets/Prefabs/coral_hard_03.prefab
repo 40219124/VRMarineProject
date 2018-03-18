@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 33099739341028286}
   - component: {fileID: 23716503791628724}
   m_Layer: 0
-  m_Name: default
+  m_Name: Coral 3 mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,5 +127,5 @@ MonoBehaviour:
   mindepth: 0
   maxdepth: -100
   changeAngle: 1
-  steepest: 90
-  shallowest: 45
+  steepest: 30
+  shallowest: 0

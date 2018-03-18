@@ -11,7 +11,6 @@ public class Coral : MonoBehaviour {
     public float steepest = 90.0f;
     public float shallowest = 0.0f;
 
-
 	// Use this for initialization
 	void Start () {
 	}
