@@ -599,6 +599,18 @@ Prefab:
       propertyPath: m_TagString
       value: fish
       objectReference: {fileID: 0}
+    - target: {fileID: 4698341702178900, guid: 8db6febc7be32014d8e96a4979478914, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698341702178900, guid: 8db6febc7be32014d8e96a4979478914, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698341702178900, guid: 8db6febc7be32014d8e96a4979478914, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114795728788202572, guid: 8db6febc7be32014d8e96a4979478914, type: 2}
     - {fileID: 114191983267359712, guid: 8db6febc7be32014d8e96a4979478914, type: 2}
