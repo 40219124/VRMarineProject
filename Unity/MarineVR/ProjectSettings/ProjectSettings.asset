@@ -717,7 +717,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: 5212a578-d1f5-490a-bdb6-903e023fd25a
-  projectName: 
+  projectName: MarineVR
   organizationId: timothy-sanderson
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

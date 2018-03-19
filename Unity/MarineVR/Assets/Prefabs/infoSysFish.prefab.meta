@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Unity/MarineVR/Assets/Prefabs/infoSysFish.prefab.meta
 guid: 5222fd90675ee044cabc9620e05bc300
 timeCreated: 1521468610
+=======
+guid: 0dcb814eb60d91644bc9b5a4341b0973
+timeCreated: 1521068762
+>>>>>>> 54b4b083983704cf3b4887b6779fd24fac971dc7:Unity/MarineVR/Assets/Prefabs/fish_02.prefab.meta
 licenseType: Free
 NativeFormatImporter:
   externalObjects: {}
