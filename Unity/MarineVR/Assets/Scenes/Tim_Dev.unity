@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.32156864, g: 0.5764706, b: 0.61960787, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &186358227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +374,10 @@ Prefab:
     - target: {fileID: 4056216026473392, guid: 5131ba3f1e793b043a3f3703e73f0f9d, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370929669159384, guid: 5131ba3f1e793b043a3f3703e73f0f9d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5131ba3f1e793b043a3f3703e73f0f9d, type: 2}
@@ -729,7 +733,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4060872362662784, guid: 940a4ebdddd49634a886f9fae1b4d517, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10.68
+      value: 2.88
       objectReference: {fileID: 0}
     - target: {fileID: 4060872362662784, guid: 940a4ebdddd49634a886f9fae1b4d517, type: 2}
       propertyPath: m_LocalPosition.z
