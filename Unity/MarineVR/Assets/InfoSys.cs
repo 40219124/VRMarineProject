@@ -9,6 +9,7 @@ public class InfoSys : MonoBehaviour {
     private SteamVR_TrackedObject[] trackedObj = new SteamVR_TrackedObject[2];
     // device 0 = left, device 1 = right
     private SteamVR_Controller.Device[] device = new SteamVR_Controller.Device[2];
+    bool collided;
 
     // Use this for initialization
     void Start () {
@@ -19,23 +20,32 @@ public class InfoSys : MonoBehaviour {
     }
 
     //Should update if colliding with anything
-    private void OnCollisionTrigger(Collider collision)
+    private void OnTriggerEnter(Collider collision)
     {
 
         Debug.Log("collision detected");
-        if (collision.transform.gameObject.tag == "fish")
+        if(collision.transform.gameObject.tag == "fish")
         {
-            GUI.Box(new Rect(0, 0, 100, 100), information);
-            
+
+            collided = true;
             
         }
-        
         //if (collision.transform.gameObject == controller[0] && device[0].GetPressDown(EVRButtonId.k_EButton_A))
         //{
         //    GUI.Box(new Rect(0, 0, 100, 100), information);
         //}
     }
 
+    private void OnTriggerExit(Collider collision)
+    {
+        collided = false;
+    }
+
+    private void OnGUI()
+    {
+        if (collided)
+        GUI.Box(new Rect(0, 0, 100, 100), information);
+    }
 
     // Update is called once per frame
     void Update () {
