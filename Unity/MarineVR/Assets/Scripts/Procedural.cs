@@ -13,10 +13,15 @@ public class Procedural : MonoBehaviour
     private int max_height = 0;
     private bool visited;
     private List<GameObject> corals = new List<GameObject>();
+    private List<int> total = new List<int>();
 
     // Use this for initialization
     void Start()
     {
+        for (int i = 0; i < coral.Count; i++)
+        {
+            total.Add(0);
+        }
         //call generate to generate coral on load
         Create();
     }
@@ -88,7 +93,7 @@ public class Procedural : MonoBehaviour
                             done = true;
                             break;
                         }
-                        if (theCoral.mindepth < hit.point.y || theCoral.maxdepth > hit.point.y || theCoral.steepest < angle || theCoral.shallowest > angle)
+                        if (theCoral.mindepth < hit.point.y || theCoral.maxdepth > hit.point.y || theCoral.steepest < angle || theCoral.shallowest > angle || total[j] >= theCoral.rarity)
                         {
                             j = Random.Range(0, coral.Count);
                             theCoral = coral[j].GetComponent<Coral>();
@@ -113,6 +118,7 @@ public class Procedural : MonoBehaviour
                         c.transform.Rotate(new Vector3(0.0f, Random.Range(-180, 180), 0.0f));
                         c.transform.parent = this.GetComponent<Transform>();
                         corals.Add(c);
+                        total[j] += 1;
                     }
                 }
             }

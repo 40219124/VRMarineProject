@@ -129,3 +129,4 @@ MonoBehaviour:
   changeAngle: 1
   steepest: 90
   shallowest: 45
+  rarity: 100
