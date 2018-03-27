@@ -61,5 +61,6 @@ MonoBehaviour:
   - {fileID: 1537965663809134, guid: eb22ad1bd2d1be141ab5e40d895e1275, type: 2}
   - {fileID: 1238621701560504, guid: b3f661ca161ef6d429d993b7b6c2ce3e, type: 2}
   - {fileID: 1238621701560504, guid: b293f4bf145b25543bdd734971be7a65, type: 2}
+  - {fileID: 1798631299843328, guid: 52a3403bf79c09c4b80833846dea708b, type: 2}
   objects: 300
   max_height: 0
