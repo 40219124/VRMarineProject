@@ -11,6 +11,7 @@ public class Coral : MonoBehaviour {
     public float steepest = 90.0f;
     public float shallowest = 0.0f;
     public float rarity = 20;
+    public bool overlap = false;
     public int groupMin= 0;
     public int groupMax= 0;
 
@@ -22,4 +23,21 @@ public class Coral : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.tag != "ground")
+        {
+            overlap = true;
+        }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.collider.tag != "ground")
+        {
+            overlap = false;
+        }
+    }
+
 }

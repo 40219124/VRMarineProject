@@ -160,7 +160,49 @@ public class Procedural : MonoBehaviour
         return made;
     }
 
+    void testCollide(GameObject c)
+    {
+        Coral theCoral = c.GetComponent<Coral>();
+        Vector3 pos= new Vector3(0.0f, 0.0f, 0.0f);
+        while (theCoral.overlap)
+        {
+            pos.x = c.transform.position.x + Random.Range(-1.0f, 1.0f);
+            pos.z = c.transform.position.z + Random.Range(-1.0f, 1.0f);
+            //variables for raycasting
+            Ray down = new Ray(pos, Vector3.down);
+            RaycastHit hit;
+
+            //check if above ground
+            if (Physics.Raycast(down, out hit))
+            {
+                //if hits ground
+                if (hit.collider.tag == "Ground")
+                {
+                    //find angle of rotation
+                    float angle = Mathf.Acos(Vector3.Dot(Vector3.up, hit.normal));
+                    angle = (angle * 180) / Mathf.PI;
+                    Vector3 axis = new Vector3();
+                    //convert to degrees
+                    if (theCoral.changeAngle)
+                    {
+                        hit.point += (theCoral.offset * c.transform.localScale.y) * hit.normal;
+
+                        //find axis of rotation
+                        axis = Vector3.Normalize(Vector3.Cross(Vector3.up, hit.normal));
+                        //multiply by angle
+                        axis *= angle;
+                    }
+
+                    pos.y = hit.point.y;
+
+                    c.GetComponent<Transform>().SetPositionAndRotation(pos, Quaternion.Euler(axis));
+                }
+            }
+        }
+    }
+
     bool Test(Coral theCoral, RaycastHit hit, float angle)
+
     {
         if (theCoral.mindepth < hit.point.y || theCoral.maxdepth > hit.point.y || theCoral.steepest < angle || theCoral.shallowest > angle)
         {
@@ -168,6 +210,7 @@ public class Procedural : MonoBehaviour
         }
         return true;
     }
+
 
     GameObject CreateObject(Coral theCoral, RaycastHit hit, float angle, int j)
     {
@@ -192,6 +235,7 @@ public class Procedural : MonoBehaviour
             c.transform.parent = this.GetComponent<Transform>();
             c.GetComponentInChildren<Renderer>().material.color *= Random.Range(0.8f, 1.8f);
             corals.Add(c);
+            testCollide(c);
             return c;
         }
         return null;
