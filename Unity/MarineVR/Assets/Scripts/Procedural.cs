@@ -164,7 +164,7 @@ public class Procedural : MonoBehaviour
     {
         Coral theCoral = c.GetComponent<Coral>();
         Vector3 pos= new Vector3(0.0f, 0.0f, 0.0f);
-        while (theCoral.overlap)
+        while (theCoral.overlaps.Count > 0)
         {
             pos.x = c.transform.position.x + Random.Range(-1.0f, 1.0f);
             pos.z = c.transform.position.z + Random.Range(-1.0f, 1.0f);
@@ -185,8 +185,6 @@ public class Procedural : MonoBehaviour
                     //convert to degrees
                     if (theCoral.changeAngle)
                     {
-                        hit.point += (theCoral.offset * c.transform.localScale.y) * hit.normal;
-
                         //find axis of rotation
                         axis = Vector3.Normalize(Vector3.Cross(Vector3.up, hit.normal));
                         //multiply by angle
@@ -194,7 +192,7 @@ public class Procedural : MonoBehaviour
                     }
 
                     pos.y = hit.point.y;
-
+                    pos += (theCoral.offset * c.transform.localScale.y) * hit.normal;
                     c.GetComponent<Transform>().SetPositionAndRotation(pos, Quaternion.Euler(axis));
                 }
             }
@@ -217,11 +215,10 @@ public class Procedural : MonoBehaviour
         if (Test(theCoral, hit, angle))
         {
             Vector3 axis = new Vector3();
+            hit.point += (theCoral.offset * coral[j].transform.localScale.y) * hit.normal;
 
             if (theCoral.changeAngle)
             {
-                hit.point += (theCoral.offset * coral[j].transform.localScale.y) * hit.normal;
-
                 //find axis of rotation
                 axis = Vector3.Normalize(Vector3.Cross(Vector3.up, hit.normal));
                 //multiply by angle

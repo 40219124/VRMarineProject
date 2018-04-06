@@ -37,6 +37,9 @@ GameObject:
   - component: {fileID: 4077416923575680}
   - component: {fileID: 33099739341028286}
   - component: {fileID: 23716503791628724}
+  - component: {fileID: 64894586329904346}
+  - component: {fileID: 54908325175646686}
+  - component: {fileID: 114129330515390264}
   m_Layer: 0
   m_Name: Coral 2 Mesh
   m_TagString: Untagged
@@ -111,7 +114,47 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1786153229994174}
-  m_Mesh: {fileID: 4300000, guid: 8d1436c8bb89adf4eaf2ffc72db2bf5b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: b72f6526c8762c04e96975df8381719d, type: 3}
+--- !u!54 &54908325175646686
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786153229994174}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &64894586329904346
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786153229994174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: b72f6526c8762c04e96975df8381719d, type: 3}
+--- !u!114 &114129330515390264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786153229994174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5656be06f226ab46bcc6ebb058c14b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114600178592732722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,5 +173,7 @@ MonoBehaviour:
   steepest: 70
   shallowest: 20
   rarity: 20
+  overlap: 0
+  overlaps: 
   groupMin: 0
   groupMax: 0
