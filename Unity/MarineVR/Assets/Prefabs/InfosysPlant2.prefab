@@ -23,10 +23,10 @@ GameObject:
   - component: {fileID: 23341190072096020}
   - component: {fileID: 54033167465051732}
   - component: {fileID: 64937919562297906}
-  - component: {fileID: 114964932895946286}
+  - component: {fileID: 114361257514299150}
   m_Layer: 0
   m_Name: infoSysPlant
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902226461062922}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 106.21, y: -18.87, z: -198.83}
+  m_LocalPosition: {x: 6, y: 0, z: -1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4143080615421304}
@@ -144,6 +144,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2f030336c1b3f90449c622cdf0004f0b, type: 3}
+--- !u!114 &114361257514299150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095731295573254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4a00e3cc45cd445a1fa5231e16cf7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: {fileID: 0}
 --- !u!114 &114413708592756926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,14 +173,3 @@ MonoBehaviour:
   changeAngle: 0
   steepest: 20
   shallowest: 0
---- !u!114 &114964932895946286
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095731295573254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfdba1477fabc174cbfbfbf46f6b9009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

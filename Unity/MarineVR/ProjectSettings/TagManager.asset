@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - fish
+  - projectile
+  - plant
+  - coral
   layers:
   - Default
   - TransparentFX
