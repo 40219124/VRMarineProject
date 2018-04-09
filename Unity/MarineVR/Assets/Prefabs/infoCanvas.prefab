@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114194812934730476}
   m_Layer: 0
   m_Name: infoCanvas
-  m_TagString: Untagged
+  m_TagString: infoCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: it works now
+  m_Text: 
 --- !u!114 &114426951290092612
 MonoBehaviour:
   m_ObjectHideFlags: 1
