@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Fish!
+  m_Name: Coral 2
   m_Shader: {fileID: 4800000, guid: 29d91ebc6d86cce4e89e00ca309575e0, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 4
@@ -77,6 +77,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _CausticsDrift: {r: 0.1, g: 0, b: -0.05, a: 1}
-    - _Color: {r: 0.86666673, g: 0.30588236, b: 0.25882354, a: 1}
+    - _Color: {r: 0.3663495, g: 0.54251885, b: 0.64705884, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}

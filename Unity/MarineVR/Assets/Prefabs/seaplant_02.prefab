@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 33225570751469932}
   - component: {fileID: 23860284875382358}
   m_Layer: 0
-  m_Name: default
+  m_Name: Seaplant 2 mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,3 +129,6 @@ MonoBehaviour:
   changeAngle: 0
   steepest: 20
   shallowest: 0
+  rarity: 5
+  groupMin: 9
+  groupMax: 10
