@@ -186,8 +186,8 @@ public class Procedural : MonoBehaviour
             }
             //create coral
             GameObject c = Instantiate(coral[j], hit.point, Quaternion.Euler(axis));
-            float scale = c.transform.localScale.y * Random.Range(0.8f, 1.2f);
-            c.transform.localScale += new Vector3(scale, scale, scale);
+			Vector3 scale = c.transform.localScale * Random.Range(0.8f, 1.2f);
+            c.transform.localScale = scale;
             c.transform.Rotate(new Vector3(0.0f, Random.Range(-180, 180), 0.0f));
             c.transform.parent = this.GetComponent<Transform>();
             c.GetComponentInChildren<Renderer>().material.color *= Random.Range(0.8f, 1.8f);
