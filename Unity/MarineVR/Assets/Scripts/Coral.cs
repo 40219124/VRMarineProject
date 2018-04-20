@@ -10,10 +10,12 @@ public class Coral : MonoBehaviour {
     public bool changeAngle;
     public float steepest = 90.0f;
     public float shallowest = 0.0f;
+    public float rarity = 20;
+    public int groupMin= 0;
+    public int groupMax= 0;
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	}
 	
 	// Update is called once per frame

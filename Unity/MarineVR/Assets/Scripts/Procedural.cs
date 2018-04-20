@@ -13,10 +13,15 @@ public class Procedural : MonoBehaviour
     private int max_height = 0;
     private bool visited;
     private List<GameObject> corals = new List<GameObject>();
+    private List<int> total = new List<int>();
 
     // Use this for initialization
     void Start()
     {
+        for (int i = 0; i < coral.Count; i++)
+        {
+            total.Add(0);
+        }
         //call generate to generate coral on load
         Create();
     }
@@ -35,19 +40,13 @@ public class Procedural : MonoBehaviour
         }
         else
         {
-            foreach (GameObject c in corals)
-            {
-                c.SetActive(true);
-            }
+            gameObject.SetActive(true);
         }
     }
 
     public void Remove()
     {
-        foreach (GameObject c in corals)
-        {
-            c.SetActive(false);
-        }
+        gameObject.SetActive(false);
     }
 
     //method to generate sea life
@@ -71,53 +70,131 @@ public class Procedural : MonoBehaviour
                 //if hits ground
                 if (hit.collider.tag == "Ground")
                 {
+                    if (coral.Count == 0)
+                    {
+                        return;
+                    }
+
                     int j = Random.Range(0, coral.Count);
                     Coral theCoral = coral[j].GetComponent<Coral>();
                     //find angle of rotation
                     float angle = Mathf.Acos(Vector3.Dot(Vector3.up, hit.normal));
                     //convert to degrees
                     angle = (angle * 180) / Mathf.PI;
-                    int tries = 2;
-                    bool done = false;
 
-                    while (!done)
+
+                    for (int tries = 2; tries > 0; tries--)
                     {
-                        tries -= 1;
-                        if (tries == 0)
-                        {
-                            done = true;
-                            break;
-                        }
-                        if (theCoral.mindepth < hit.point.y || theCoral.maxdepth > hit.point.y || theCoral.steepest < angle || theCoral.shallowest > angle)
+
+                        if (!Test(theCoral, hit, angle))
                         {
                             j = Random.Range(0, coral.Count);
                             theCoral = coral[j].GetComponent<Coral>();
                         }
-                    }
-
-                    if (theCoral.mindepth > hit.point.y && theCoral.maxdepth < hit.point.y && theCoral.steepest > angle && theCoral.shallowest <= angle)
-                    {
-                        Vector3 axis = new Vector3();
-
-                        if (theCoral.changeAngle)
+                        else
                         {
-                            hit.point += (theCoral.offset * coral[j].transform.localScale.y) * hit.normal;
-
-                            //find axis of rotation
-                            axis = Vector3.Normalize(Vector3.Cross(Vector3.up, hit.normal));
-                            //multiply by angle
-                            axis *= angle;
+                            break;
                         }
-                        //create coral
-                        GameObject c = Instantiate(coral[j], hit.point, Quaternion.Euler(axis));
-                        c.transform.Rotate(new Vector3(0.0f, Random.Range(-180, 180), 0.0f));
-                        c.transform.parent = this.GetComponent<Transform>();
-                        corals.Add(c);
                     }
+
+                    GameObject c = CreateObject(theCoral, hit, angle, j);
+
+                    if (c != null)
+                    {
+                        int amount = 0;
+                        if (theCoral.groupMax > 0)
+                        {
+                            amount = Cluster(c, j);
+                            i += amount;
+                        }
+                        total[j] += (1 + amount);
+                        if (total[j] >= (theCoral.rarity * (float)(objects / 100)))
+                        {
+                            coral.RemoveAt(j);
+                            total.RemoveAt(j);
+                        }
+                    }
+
                 }
             }
 
         }
+    }
+
+    int Cluster(GameObject c, int j)
+    {
+        //choose random point
+        Vector3 pos = c.transform.localPosition;
+        pos.y = max_height;
+        Coral theCoral = coral[j].GetComponent<Coral>();
+        int amount = Random.Range(theCoral.groupMin, theCoral.groupMax);
+        int made = 0;
+
+        //loop for every object
+        for (int i = 0; i < amount; i++)
+        {
+            pos.x = c.transform.position.x + Random.Range(-1.0f, 1.0f);
+            pos.z = c.transform.position.z + Random.Range(-1.0f, 1.0f);
+            //variables for raycasting
+            Ray down = new Ray(pos, Vector3.down);
+            RaycastHit hit;
+
+            //check if above ground
+            if (Physics.Raycast(down, out hit))
+            {
+                //if hits ground
+                if (hit.collider.tag == "Ground")
+                {
+                    //find angle of rotation
+                    float angle = Mathf.Acos(Vector3.Dot(Vector3.up, hit.normal));
+                    //convert to degrees
+                    angle = (angle * 180) / Mathf.PI;
+
+                    if (CreateObject(theCoral, hit, angle, j) != null)
+                    {
+                        made++;
+                    }
+                }
+            }
+        }
+        return made;
+    }
+
+    bool Test(Coral theCoral, RaycastHit hit, float angle)
+    {
+        if (theCoral.mindepth < hit.point.y || theCoral.maxdepth > hit.point.y || theCoral.steepest < angle || theCoral.shallowest > angle)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    GameObject CreateObject(Coral theCoral, RaycastHit hit, float angle, int j)
+    {
+        if (Test(theCoral, hit, angle))
+        {
+            Vector3 axis = new Vector3();
+
+            if (theCoral.changeAngle)
+            {
+                hit.point += (theCoral.offset * coral[j].transform.localScale.y) * hit.normal;
+
+                //find axis of rotation
+                axis = Vector3.Normalize(Vector3.Cross(Vector3.up, hit.normal));
+                //multiply by angle
+                axis *= angle;
+            }
+            //create coral
+            GameObject c = Instantiate(coral[j], hit.point, Quaternion.Euler(axis));
+            float scale = c.transform.localScale.y * Random.Range(0.8f, 1.2f);
+            c.transform.localScale += new Vector3(scale, scale, scale);
+            c.transform.Rotate(new Vector3(0.0f, Random.Range(-180, 180), 0.0f));
+            c.transform.parent = this.GetComponent<Transform>();
+            c.GetComponentInChildren<Renderer>().material.color *= Random.Range(0.8f, 1.8f);
+            corals.Add(c);
+            return c;
+        }
+        return null;
     }
 
     void OnDrawGizmosSelected()
