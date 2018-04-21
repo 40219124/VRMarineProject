@@ -1327,6 +1327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66287f17e6570640aef0dadd5b54b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intensity: 0.2
 --- !u!135 &1762910603
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1378,41 +1379,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 145203509995947200, guid: 3850fd4c722a19142bfb9dc3bd44316f,
-        type: 2}
-      propertyPath: m_Spring
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 145747948269046572, guid: 3850fd4c722a19142bfb9dc3bd44316f,
-        type: 2}
-      propertyPath: m_Spring
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 145498639229702598, guid: 3850fd4c722a19142bfb9dc3bd44316f,
-        type: 2}
-      propertyPath: m_Spring
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 145463442051695250, guid: 3850fd4c722a19142bfb9dc3bd44316f,
-        type: 2}
-      propertyPath: m_Spring
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 145085004859804126, guid: 3850fd4c722a19142bfb9dc3bd44316f,
-        type: 2}
-      propertyPath: m_Spring
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 145800378344668122, guid: 3850fd4c722a19142bfb9dc3bd44316f,
-        type: 2}
-      propertyPath: m_Spring
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 145544797131733770, guid: 3850fd4c722a19142bfb9dc3bd44316f,
-        type: 2}
-      propertyPath: m_Spring
-      value: 200
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3850fd4c722a19142bfb9dc3bd44316f, type: 2}
   m_IsPrefabParent: 0
@@ -1457,22 +1423,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1883645062 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1149432221024168, guid: 3850fd4c722a19142bfb9dc3bd44316f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1806836887}
---- !u!114 &1883645063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1883645062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93834a0205e8c0d4e81c4896ba422bb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2102927941 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100014, guid: f99024d38b2b886418f538422640cc7f, type: 3}
