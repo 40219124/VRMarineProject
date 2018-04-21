@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpringValues : MonoBehaviour
 {
-
     public static float strength;
     public static float damper;
     public static int updateValues = 0;
