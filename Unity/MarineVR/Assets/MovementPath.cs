@@ -21,7 +21,7 @@ public class MovementPath : MonoBehaviour
 
         for (int i = 1; i < pathSequence.Length; ++i)
         {
-            Gizmos.DrawLine(pathSequence[i - 1].position, pathSequence[1].position);
+            Gizmos.DrawLine(pathSequence[i - 1].position, pathSequence[i].position);
         }
 
         if (pathType == PathTypes.loop)
@@ -66,6 +66,5 @@ public class MovementPath : MonoBehaviour
                 }
             }
         }
-        
     }
 }
