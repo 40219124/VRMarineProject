@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Audio : MonoBehaviour
 {
+    [SerializeField]
+    int waitTime = 2;
+
     void Start()
     {
         StartCoroutine(SoundOut());
@@ -16,7 +19,7 @@ public class Audio : MonoBehaviour
             audio.Play();
 
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(waitTime);
         }
     }
 }

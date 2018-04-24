@@ -5,9 +5,9 @@ using UnityEngine;
 public static class Data {
 
     public static Dictionary<string, string> dictionaryData = new Dictionary<string, string>{
-        { "fish", "I am a fish" },
-        { "coral", "I am a coral" },
-        { "plant", "I am a plant" }
+        { "fish", "Name: Fish\n Appearance: Scaled" },
+        { "coral", "Name: Coral\n Appearance: Plantlike" },
+        { "plant", "Name: Seaweed\n Appearance: vine-like" }
     };
 
 
