@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06e98935293ebd48afe91c200aabbbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 10
+  size: 12
   coral:
   - {fileID: 1537965663809134, guid: 74954964c27b04d4ca6c7a1cab8e785e, type: 2}
   - {fileID: 1950023264642562, guid: 3850fd4c722a19142bfb9dc3bd44316f, type: 2}
@@ -62,5 +62,5 @@ MonoBehaviour:
   - {fileID: 1238621701560504, guid: b3f661ca161ef6d429d993b7b6c2ce3e, type: 2}
   - {fileID: 1238621701560504, guid: b293f4bf145b25543bdd734971be7a65, type: 2}
   - {fileID: 1798631299843328, guid: 52a3403bf79c09c4b80833846dea708b, type: 2}
-  objects: 300
+  objects: 380
   max_height: 0
