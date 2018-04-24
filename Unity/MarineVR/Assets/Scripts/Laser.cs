@@ -4,15 +4,6 @@ using System.Collections;
 using Valve.VR;
 using UnityEngine.UI;
 
-public struct PointerEventArgs
-{
-    public uint controllerIndex;
-    public uint flags;
-    public float distance;
-    public Transform target;
-}
-
-public delegate void PointerEventHandler(object sender, PointerEventArgs e);
 
 
 public class Laser : MonoBehaviour
@@ -154,8 +145,11 @@ public class Laser : MonoBehaviour
                 {
                     if (controller != null && device.GetPressDown(EVRButtonId.k_EButton_SteamVR_Touchpad))
                     {
-                        canvas.text = Data.dictionaryData[collided.collider.tag];
-                        dispText = true;
+                        if (Data.dictionaryData.ContainsKey(collided.collider.tag))
+                        {
+                            canvas.text = Data.dictionaryData[collided.collider.tag];
+                            dispText = true;
+                        }
                     }
                 }
                 else
