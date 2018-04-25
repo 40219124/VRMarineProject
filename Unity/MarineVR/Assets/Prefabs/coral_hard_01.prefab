@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114600178592732722}
   m_Layer: 0
   m_Name: coral_hard_01
-  m_TagString: Untagged
+  m_TagString: coral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

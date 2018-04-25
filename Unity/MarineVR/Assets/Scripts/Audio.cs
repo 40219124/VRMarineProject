@@ -4,24 +4,30 @@ using System.Collections;
 public class Audio : MonoBehaviour
 {
     [SerializeField]
+    AudioClip[] clips;
+    AudioSource source;
     int waitTime;
     int audioNo;
+    float totalCD = 5.0f;
+    float remainingCD;
 
     void Start()
     {
-        StartCoroutine(SoundOut());
+        source = GetComponent<AudioSource>();
+        totalCD = new System.Random().Next(5, 20);
+        remainingCD = totalCD;
     }
 
-    IEnumerator SoundOut()
+    void Update()
     {
-        while (true)
+        remainingCD -= Time.deltaTime;
+        if (remainingCD <= 0.0f)
         {
-            audioNo = new System.Random().Next(0,4);
-            AudioSource[] audio = GetComponents<AudioSource>();
-            audio[audioNo].Play();
-            waitTime = new System.Random().Next(60);
-
-            yield return new WaitForSeconds(waitTime);
+            audioNo = new System.Random().Next(0, clips.Length);
+            source.clip = clips[audioNo];
+            source.Play();
+            totalCD = new System.Random().Next(5, 20);
+            remainingCD = totalCD;
         }
     }
 }
