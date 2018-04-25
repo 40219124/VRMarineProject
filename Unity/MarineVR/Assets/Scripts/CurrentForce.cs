@@ -90,7 +90,7 @@ public class CurrentForce : MonoBehaviour
 
         pc = gameObject.GetComponentInParent<PulseControl>();
         speed = distance / pc.Period;
-        intensity = intensity * speed / 100.0f;
+        intensity = intensity / 10.0f;
         previousFrame = transform.position;
     }
 
