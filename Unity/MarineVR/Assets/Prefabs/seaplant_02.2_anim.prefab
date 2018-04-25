@@ -594,9 +594,9 @@ MonoBehaviour:
   changeAngle: 0
   steepest: 20
   shallowest: 0
-  rarity: 1
-  groupMin: 9
-  groupMax: 10
+  rarity: 2
+  groupMin: 2
+  groupMax: 4
 --- !u!114 &114937594358646180
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -130,5 +130,5 @@ MonoBehaviour:
   steepest: 45
   shallowest: 0
   rarity: 3
-  groupMin: 17
-  groupMax: 20
+  groupMin: 2
+  groupMax: 4

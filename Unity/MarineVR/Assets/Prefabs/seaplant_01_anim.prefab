@@ -712,7 +712,7 @@ MonoBehaviour:
   shallowest: 0
   rarity: 2
   groupMin: 5
-  groupMax: 12
+  groupMax: 9
 --- !u!114 &114562269089334430
 MonoBehaviour:
   m_ObjectHideFlags: 1
