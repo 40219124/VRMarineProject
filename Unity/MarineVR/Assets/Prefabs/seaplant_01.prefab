@@ -37,8 +37,8 @@ GameObject:
   - component: {fileID: 4382310068440626}
   - component: {fileID: 33225570751469932}
   - component: {fileID: 23860284875382358}
-  m_Layer: 0
-  m_Name: default
+  m_Layer: 8
+  m_Name: seaplant Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ Transform:
   m_GameObject: {fileID: 1238621701560504}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -23.663918, y: -31.556885, z: 82.45943}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 4382310068440626}
   m_Father: {fileID: 0}
@@ -129,3 +129,6 @@ MonoBehaviour:
   changeAngle: 0
   steepest: 45
   shallowest: 0
+  rarity: 10
+  groupMin: 5
+  groupMax: 5

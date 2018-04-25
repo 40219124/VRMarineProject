@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Ground
   - fish
+  - Current
+  - infoCanvas
+  - plant
+  - coral
+  - projectile
   layers:
   - Default
   - TransparentFX
@@ -15,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Coral
+  - Boundries
+  - Player
   - 
   - 
   - 

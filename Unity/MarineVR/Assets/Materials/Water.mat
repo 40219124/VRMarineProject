@@ -35,7 +35,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 4438be7e92aa1044492e4ff18069062b, type: 3}
+        m_Texture: {fileID: 2800000, guid: ca62d7b16220e0045b8ff0b30e2a0f29, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -64,9 +64,9 @@ Material:
     - _DstBlend: 10
     - _EmissionScaleUI: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.05
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.693
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -77,6 +77,6 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _CausticsDrift: {r: 0.1, g: 0, b: -0.05, a: 1}
-    - _Color: {r: 0, g: 0.62352943, b: 0.70980394, a: 0.728}
+    - _Color: {r: 0, g: 0.62352943, b: 0.70980394, a: 0.7294118}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
