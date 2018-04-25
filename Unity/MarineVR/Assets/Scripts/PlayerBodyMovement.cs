@@ -111,6 +111,7 @@ public class PlayerBodyMovement : MonoBehaviour
         }
 
            
+        GetComponent<CapsuleCollider>().center = camTrans.localPosition;
 
     }
 }
