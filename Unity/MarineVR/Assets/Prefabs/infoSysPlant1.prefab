@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54658812149987688}
   - component: {fileID: 64730429325659822}
   - component: {fileID: 114306385327129050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: infoSysPlant
   m_TagString: plant
   m_Icon: {fileID: 0}
@@ -172,3 +172,6 @@ MonoBehaviour:
   changeAngle: 0
   steepest: 45
   shallowest: 0
+  rarity: 20
+  groupMin: 0
+  groupMax: 0

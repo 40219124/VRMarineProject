@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64119268428734706}
   - component: {fileID: 54254622150084996}
   - component: {fileID: 114160496840189970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: infoSysFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4382310068440626}
   - component: {fileID: 33225570751469932}
   - component: {fileID: 23860284875382358}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Seaplant 3 mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

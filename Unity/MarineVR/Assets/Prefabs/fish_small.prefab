@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33706960027921146}
   - component: {fileID: 23131553040594104}
   - component: {fileID: 64810598424505066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fish mesh
   m_TagString: fish
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ Transform:
   m_GameObject: {fileID: 1798631299843328}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -33.36303, y: 5.514947e-18, z: 33.24012}
-  m_LocalScale: {x: 0.01, y: 0.008, z: 0.01}
+  m_LocalScale: {x: 0.02, y: 0.016, z: 0.02}
   m_Children:
   - {fileID: 4502711810200158}
   m_Father: {fileID: 0}

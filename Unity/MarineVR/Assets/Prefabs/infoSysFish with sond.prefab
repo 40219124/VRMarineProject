@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64176707018393856}
   - component: {fileID: 54029210872124606}
   - component: {fileID: 114183796990759702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: infoSysFish
   m_TagString: fish
   m_Icon: {fileID: 0}
@@ -262,3 +262,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97462964f1ea03744a05bc64600826fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clips: []

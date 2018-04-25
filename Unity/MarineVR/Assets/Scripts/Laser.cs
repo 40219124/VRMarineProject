@@ -26,7 +26,7 @@ public class Laser : MonoBehaviour
     bool dispLaser = false;
     bool dispText = false;
     [SerializeField]
-    float dist = 0.5f;
+    float dist = 0.75f;
     
     Transform previousContact = null;
     Text canvas;
@@ -176,7 +176,7 @@ public class Laser : MonoBehaviour
             
         }
         if (dispLaser)
-            dist = 0.5f;
+            dist = 0.75f;
 
         if (dispText)
         {

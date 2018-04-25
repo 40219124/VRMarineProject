@@ -17,6 +17,7 @@ public class PlayerBodyMovement : MonoBehaviour
     private float holdTime = 0.5f;
     private float clock = 0.0f;
     private bool turnBody = true;
+    private Vector3 spawn = new Vector3(-29.0f, -3.0f, -27.0f);
 
     // Use this for initialization
     void Start()
@@ -39,6 +40,10 @@ public class PlayerBodyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y < -18.0f)
+        {
+            transform.position = spawn;
+        }
         device[0] = SteamVR_Controller.Input((int)trackedObj[0].index);
         device[1] = SteamVR_Controller.Input((int)trackedObj[1].index);
 

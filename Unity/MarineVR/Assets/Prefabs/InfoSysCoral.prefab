@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 54429176099487094}
   - component: {fileID: 64814062008210660}
   - component: {fileID: 114262827196800676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: infoSysCoral
   m_TagString: coral
   m_Icon: {fileID: 0}
@@ -172,3 +172,6 @@ MonoBehaviour:
   changeAngle: 1
   steepest: 90
   shallowest: 45
+  rarity: 20
+  groupMin: 0
+  groupMax: 0

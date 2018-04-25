@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114326885614402368}
   - component: {fileID: 222067374819571688}
   - component: {fileID: 114244102879950854}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: infoCanvas
   m_TagString: infoCanvas
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4742145545494572}
   - component: {fileID: 82328998903524786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4668790921444060}
   - component: {fileID: 114053640107794238}
   - component: {fileID: 114421163736946086}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Controller (left)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 20167312072191002}
   - component: {fileID: 124878846700414770}
   - component: {fileID: 114562777929177076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera (eye)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4873830850844722}
   - component: {fileID: 81508576400802112}
   - component: {fileID: 114730974254446494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera (ears)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4232256899146412}
   - component: {fileID: 114888495524929982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 114909752584327536}
   - component: {fileID: 114772744074220768}
   - component: {fileID: 114090144025856586}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Controller (right)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4480629186985646}
   - component: {fileID: 114969904720122264}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,9 +163,11 @@ GameObject:
   - component: {fileID: 33960827023327990}
   - component: {fileID: 114677355873475002}
   - component: {fileID: 114031905147667020}
-  m_Layer: 0
+  - component: {fileID: 136110962034317242}
+  - component: {fileID: 54155534699776332}
+  m_Layer: 10
   m_Name: '[CameraRig] with laser'
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +183,7 @@ GameObject:
   - component: {fileID: 20782400142048458}
   - component: {fileID: 114921512867379578}
   - component: {fileID: 92229288769562230}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera (head)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -221,7 +223,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1810922710565430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.831, y: 0.386, z: -3.68}
+  m_LocalPosition: {x: -27.9, y: -4.8, z: -26.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4668790921444060}
@@ -322,8 +324,8 @@ Camera:
   m_GameObject: {fileID: 1347716216317152}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.45882353, g: 0.67058825, b: 0.84313726, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -427,6 +429,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1810922710565430}
   m_Mesh: {fileID: 0}
+--- !u!54 &54155534699776332
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1810922710565430}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 2
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!81 &81508576400802112
 AudioListener:
   m_ObjectHideFlags: 1
@@ -599,7 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 0.30882353, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -613,11 +630,11 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 215
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
 --- !u!114 &114326885614402368
@@ -815,6 +832,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347716216317152}
   m_Enabled: 1
+--- !u!136 &136110962034317242
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1810922710565430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 0.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!222 &222067374819571688
 CanvasRenderer:
   m_ObjectHideFlags: 1

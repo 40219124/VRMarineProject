@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4602319239296066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.002
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,9 +34,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4561409344085844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.004
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,9 +56,9 @@ GameObject:
   - component: {fileID: 114029108980449572}
   - component: {fileID: 114010177304384918}
   - component: {fileID: 114847560707377960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.005
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 137179000366823048}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,9 +87,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4644713939886606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.006
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,9 +104,9 @@ GameObject:
   - component: {fileID: 4911523573637428}
   - component: {fileID: 54501059560151932}
   - component: {fileID: 75681164976722504}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.006_end
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,9 +126,9 @@ GameObject:
   - component: {fileID: 114937594358646180}
   - component: {fileID: 114946363196014940}
   - component: {fileID: 114797768560580170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.001
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,9 +143,9 @@ GameObject:
   - component: {fileID: 4358158984930618}
   - component: {fileID: 54245341935544224}
   - component: {fileID: 145298141287438250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 114882027379988448}
   m_Layer: 0
   m_Name: seaplant_02.2_anim
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,9 +182,9 @@ GameObject:
   - component: {fileID: 114466509184163272}
   - component: {fileID: 114447940775076662}
   - component: {fileID: 114878102784930220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.003
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,9 +197,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4459114082317612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,7 +326,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1831657606882278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: -8.93, z: 134.69}
+  m_LocalPosition: {x: -34.93281, y: 15.431115, z: -49.282402}
   m_LocalScale: {x: 0.055, y: 0.06, z: 0.055}
   m_Children:
   - {fileID: 4459114082317612}
@@ -594,7 +594,7 @@ MonoBehaviour:
   changeAngle: 0
   steepest: 20
   shallowest: 0
-  rarity: 5
+  rarity: 1
   groupMin: 9
   groupMax: 10
 --- !u!114 &114937594358646180
