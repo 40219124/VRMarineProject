@@ -4,7 +4,8 @@ using System.Collections;
 public class Audio : MonoBehaviour
 {
     [SerializeField]
-    int waitTime = 2;
+    int waitTime;
+    int audioNo;
 
     void Start()
     {
@@ -15,9 +16,10 @@ public class Audio : MonoBehaviour
     {
         while (true)
         {
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
-
+            audioNo = new System.Random().Next(0,4);
+            AudioSource[] audio = GetComponents<AudioSource>();
+            audio[audioNo].Play();
+            waitTime = new System.Random().Next(60);
 
             yield return new WaitForSeconds(waitTime);
         }

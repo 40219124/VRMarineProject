@@ -137,16 +137,17 @@ public class Laser : MonoBehaviour
             previousContact = null;
            
         }
-        if (bHit)
+        if (bHit && hit.distance <= dist)
         {
             if (dispLaser)
                 
                 if (!dispText)
                 {
-                    if (controller != null && device.GetPressDown(EVRButtonId.k_EButton_SteamVR_Touchpad))
+                    if (controller != null && device.GetPressDown(EVRButtonId.k_EButton_ApplicationMenu))
                     {
                         if (Data.dictionaryData.ContainsKey(collided.collider.tag))
                         {
+                            canvas.transform.localPosition = new Vector3(-0.2f, 0.1f, 0.1f);
                             canvas.text = Data.dictionaryData[collided.collider.tag];
                             dispText = true;
                         }
@@ -155,16 +156,16 @@ public class Laser : MonoBehaviour
                 else
                 {
 
-                    if (controller != null && device.GetPressDown(EVRButtonId.k_EButton_SteamVR_Touchpad))
+                    if (controller != null && device.GetPressDown(EVRButtonId.k_EButton_ApplicationMenu))
                         dispText = false;
                 }
             collided = hit;
         }
         else
         {
-            if (controller != null && device.GetPressDown(EVRButtonId.k_EButton_SteamVR_Touchpad))
+            if (controller != null && device.GetPressDown(EVRButtonId.k_EButton_ApplicationMenu))
             {
-                dispText = !dispText;
+                dispText = false;
                 
             }
         }
@@ -177,9 +178,22 @@ public class Laser : MonoBehaviour
         if (dispLaser)
             dist = 0.5f;
 
-        
-
-        if (bHit && hit.distance < 100f)
+        if (dispText)
+        {
+            if (device.GetPress(EVRButtonId.k_EButton_SteamVR_Touchpad))
+            {
+                Vector2 touchpad = (device.GetAxis(EVRButtonId.k_EButton_Axis0));
+                if (touchpad.y < 0)
+                {
+                    canvas.transform.localPosition += new Vector3(0.0f, 0.01f, 0.01f);
+                }
+                else if (touchpad.y > 0)
+                {
+                    canvas.transform.localPosition -= new Vector3(0.0f, 0.01f, 0.01f);
+                }
+            }
+        }
+        if (bHit && hit.distance < dist)
         {
             dist = hit.distance;
         }
