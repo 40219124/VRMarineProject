@@ -97,5 +97,7 @@ public class PlayerBodyMovement : MonoBehaviour
                 transform.Translate(Vector3.up * ySpeed * Time.deltaTime);
             }
         }
+        GetComponent<CapsuleCollider>().center = camTrans.localPosition;
+
     }
 }
